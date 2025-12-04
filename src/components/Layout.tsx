@@ -27,7 +27,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                 className="px-3 py-1 rounded-md border border-slate-700 text-slate-200 hover:bg-slate-800 transition"
                 aria-label="Alternar tema"
               >
-                {theme === "light" ? "Modo claro" : "Modo escuro"}
+                {theme === "light" ? "Modo escuro" : "Modo claro"}
               </button>
               <nav className="hidden sm:flex items-center gap-3">
                 <Link
