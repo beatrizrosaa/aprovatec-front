@@ -133,6 +133,55 @@ npm run dev -- --port 3001
 - Check Node.js version compatibility
 - Review TypeScript errors in the terminal output
 
+## Deployment on Vercel
+
+This project is configured and ready to be deployed on Vercel.
+
+### Prerequisites
+
+1. A Vercel account ([sign up](https://vercel.com/signup) if you don't have one)
+2. Your backend API URL for production
+
+### Deployment Steps
+
+1. **Connect your repository to Vercel:**
+   - Go to [Vercel Dashboard](https://vercel.com/dashboard)
+   - Click "Add New Project"
+   - Import your Git repository
+
+2. **Configure environment variables:**
+   - In the project settings, go to "Environment Variables"
+   - Add the following variable:
+     - **Name:** `VITE_API_URL`
+     - **Value:** Your production backend API URL (e.g., `https://your-backend.vercel.app` or `https://api.yourdomain.com`)
+   - Make sure to add it for all environments (Production, Preview, Development)
+
+3. **Deploy:**
+   - Vercel will automatically detect this as a Vite project
+   - It will use the build command: `npm run build`
+   - Output directory: `dist`
+   - The `vercel.json` file ensures proper SPA routing
+
+### Important Notes
+
+- **CORS Configuration:** Make sure your backend API is configured to accept requests from your Vercel domain
+- **Environment Variables:** The `VITE_API_URL` variable must be set in Vercel's dashboard, not in a `.env` file (which is gitignored)
+- **Automatic Deployments:** Vercel will automatically deploy on every push to your main branch
+
+### Manual Deployment (Alternative)
+
+If you prefer using the Vercel CLI:
+
+```bash
+# Install Vercel CLI
+npm i -g vercel
+
+# Deploy
+vercel
+
+# Follow the prompts to configure your project
+```
+
 ## License
 
 This project is private.
